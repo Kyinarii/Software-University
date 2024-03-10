@@ -1,19 +1,15 @@
-﻿string[] days = new string[7];
-days[0] = "Monday";
-days[1] = "Tuesday";
-days[2] = "Wednesday";
-days[3] = "Thursday";
-days[4] = "Friday";
-days[5] = "Saturday";
-days[6] = "Sunday";
+﻿using System.Globalization;
 
-int currentDay = int.Parse(Console.ReadLine());
+int[] numbers = Console.ReadLine()
+                .Split()
+                .Select(int.Parse)
+                .ToArray();
 
-if (currentDay >= 1 && currentDay <= 7)
+int sum = 0;
+
+for (int i = 0; i < numbers.Length; i++)
 {
-    Console.WriteLine(days[currentDay - 1]); 
+    sum += numbers[i];
 }
-else
-{
-    Console.WriteLine("Invalid day!");
-}   
+
+Console.WriteLine(sum);
